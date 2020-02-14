@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LoginButton - yjloginsdk</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">yjloginsdk</a>&nbsp;/&nbsp;<a href="../index.html">jp.co.yahoo.yconnect.yjloginsdk.widget</a>&nbsp;/&nbsp;<a href="./index.html">LoginButton</a><br/>
+<br/>
+<h1>LoginButton</h1>
+<code><span class="keyword">class </span><span class="identifier">LoginButton</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AppCompatImageButton</span></code>
+<p>ログインボタン。
+Yahoo! JAPAN IDログインボタン デザインガイドラインに準拠。</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="-init-.html">&lt;init&gt;</a></h4>
+</td>
+<td>
+<code><span class="identifier">LoginButton</span><span class="symbol">(</span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.widget.LoginButton$<init>(android.content.Context)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">LoginButton</span><span class="symbol">(</span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.widget.LoginButton$<init>(android.content.Context, android.util.AttributeSet)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.widget.LoginButton$<init>(android.content.Context, android.util.AttributeSet)/attrs">attrs</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/util/AttributeSet.html"><span class="identifier">AttributeSet</span></a><span class="symbol">?</span><span class="symbol">)</span></code><br/>
+<code><span class="identifier">LoginButton</span><span class="symbol">(</span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.widget.LoginButton$<init>(android.content.Context, android.util.AttributeSet, kotlin.Int)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.widget.LoginButton$<init>(android.content.Context, android.util.AttributeSet, kotlin.Int)/attrs">attrs</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/util/AttributeSet.html"><span class="identifier">AttributeSet</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.widget.LoginButton$<init>(android.content.Context, android.util.AttributeSet, kotlin.Int)/defStyleAttr">defStyleAttr</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="code-challenge.html">codeChallenge</a></h4>
+</td>
+<td>
+<p>PKCEのパラメーター。</p>
+<code><span class="keyword">var </span><span class="identifier">codeChallenge</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="code-challenge-method.html">codeChallengeMethod</a></h4>
+</td>
+<td>
+<p>codeChallengeの方式。</p>
+<code><span class="keyword">var </span><span class="identifier">codeChallengeMethod</span><span class="symbol">: </span><a href="../../jp.co.yahoo.yconnect.yjloginsdk.core/-code-challenge-method/index.html"><span class="identifier">CodeChallengeMethod</span></a></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="listener.html">listener</a></h4>
+</td>
+<td>
+<p>ログイン処理の通知のためのリスナー。</p>
+<code><span class="keyword">var </span><span class="identifier">listener</span><span class="symbol">: </span><a href="../../jp.co.yahoo.yconnect.yjloginsdk.core/-login-listener/index.html"><span class="identifier">LoginListener</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="nonce.html">nonce</a></h4>
+</td>
+<td>
+<p>リプレイアタック対策のパラメーター。</p>
+<code><span class="keyword">var </span><span class="identifier">nonce</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="optional-parameters.html">optionalParameters</a></h4>
+</td>
+<td>
+<p>認可リクエスト時に指定する任意パラメーター。</p>
+<code><span class="keyword">var </span><span class="identifier">optionalParameters</span><span class="symbol">: </span><a href="../../jp.co.yahoo.yconnect.yjloginsdk.core/-optional-parameters/index.html"><span class="identifier">OptionalParameters</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<h4><a href="scopes.html">scopes</a></h4>
+</td>
+<td>
+<p>要求するスコープのセット。OPENIDは必須。</p>
+<code><span class="keyword">var </span><span class="identifier">scopes</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html"><span class="identifier">Set</span></a><span class="symbol">&lt;</span><a href="../../jp.co.yahoo.yconnect.yjloginsdk.core/-scope/index.html"><span class="identifier">Scope</span></a><span class="symbol">&gt;</span><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<h4><a href="set-image.html">setImage</a></h4>
+</td>
+<td>
+<p>ボタンの画像をセットする。</p>
+<code><span class="keyword">fun </span><span class="identifier">setImage</span><span class="symbol">(</span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.widget.LoginButton$setImage(jp.co.yahoo.yconnect.yjloginsdk.widget.LoginButtonType)/type">type</span><span class="symbol">:</span>&nbsp;<a href="../-login-button-type/index.html"><span class="identifier">LoginButtonType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

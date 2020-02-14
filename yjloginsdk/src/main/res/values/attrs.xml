@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoginButton">
+        <attr name="button_type" format="enum">
+            <enum name="button_white" value="0"/>
+            <enum name="button_red" value="1"/>
+            <enum name="icon_white" value="2"/>
+            <enum name="icon_red" value="3"/>
+        </attr>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,5 @@
+$dokka.format:html
+$dokka.linkExtension:html
+
+jp.co.yahoo.yconnect.yjloginsdk.core
+jp.co.yahoo.yconnect.yjloginsdk.widget
