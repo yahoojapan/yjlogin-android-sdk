@@ -14,7 +14,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        manifestPlaceholders = [scheme: "yj-example"]
+        manifestPlaceholders = [scheme: "yj-xxxxx"]
     }
     buildTypes {
         release {
