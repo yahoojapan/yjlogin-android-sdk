@@ -18,6 +18,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
+        manifestPlaceholders = [scheme: '${scheme}']
     }
 
     buildTypes {
@@ -30,9 +31,6 @@ android {
     testOptions {
         unitTests {
             includeAndroidResources = true
-        }
-        defaultConfig {
-            manifestPlaceholders = [scheme: "yj-example"]
         }
     }
 }
