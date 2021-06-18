@@ -27,11 +27,10 @@ internal class AuthorizationRequest(
     val codeChallenge: String,
     val codeChallengeMethod: CodeChallengeMethod,
     val state: String,
-    val optionalParameters: OptionalParameters?
+    val optionalParameters: OptionalParameters?,
+    val issuer: String
 ) {
     companion object {
-        private const val ENDPOINT_URL = "https://auth.login.yahoo.co.jp/yconnect/v2/authorization"
-
         private const val PARAM_CLIENT_ID = "client_id"
         private const val PARAM_REDIRECT_URI = "redirect_uri"
         private const val PARAM_RESPONSE_TYPE = "response_type"
@@ -60,7 +59,7 @@ internal class AuthorizationRequest(
             allParameters.putAll(optionalParameters.generate())
         }
 
-        val builder = Uri.parse(ENDPOINT_URL).buildUpon()
+        val builder = Uri.parse(issuer + Constant.AUTHORIZATION_PATH).buildUpon()
 
         allParameters.forEach {
             builder.appendQueryParameter(it.key, it.value)

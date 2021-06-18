@@ -20,5 +20,6 @@ import android.net.Uri
 
 internal data class LoginConfiguration(
     val clientId: String,
-    val redirectUri: Uri
+    val redirectUri: Uri,
+    var issuer: Uri? = null
 )
