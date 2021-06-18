@@ -98,6 +98,8 @@ object LoginManager {
             }
         }
 
+        val issuer = configuration.issuer?.toString() ?: run { Constant.DEFAULT_ISSUER }
+
         val url = AuthorizationRequest(
             configuration.clientId,
             configuration.redirectUri.toString(),
@@ -107,7 +109,8 @@ object LoginManager {
             codeChallenge,
             codeChallengeMethod,
             generateRandomByteArray(32).base64UrlSafe(),
-            optionalParameters
+            optionalParameters,
+            issuer
         ).generate()
 
         process = LoginProcess(context, url, onFinish = {
@@ -142,5 +145,22 @@ object LoginManager {
      */
     fun removeLoginListener() {
         listener = null
+    }
+
+    /**
+     * Issuerを設定する。
+     *
+     * @param issuer Issuer
+     */
+    fun setIssuer(issuer: Uri) {
+        if (!issuer.authority!!.endsWith("yahoo.co.jp")) {
+            throw RuntimeException("[yjloginsdk] Please set valid issuer.")
+        }
+
+        if (issuer.path != "/yconnect/v2") {
+            throw RuntimeException("[yjloginsdk] Please set valid issuer.")
+        }
+
+        configuration?.issuer = issuer
     }
 }

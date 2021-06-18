@@ -40,6 +40,7 @@ class AuthorizationRequestTest(
     private val codeChallengeMethod: CodeChallengeMethod,
     private val state: String,
     private val optionalParameters: OptionalParameters?,
+    private val issuer: String,
     private val expected: String
 ) {
 
@@ -52,28 +53,61 @@ class AuthorizationRequestTest(
             return listOf(
                 // シンプル
                 arrayOf(
-                    "a", "b", ResponseType.CODE, setOf(Scope.OPENID), "c", "d", CodeChallengeMethod.PLAIN, "e", null,
+                    "a",
+                    "b",
+                    ResponseType.CODE,
+                    setOf(Scope.OPENID),
+                    "c",
+                    "d",
+                    CodeChallengeMethod.PLAIN,
+                    "e",
+                    null,
+                    "https://auth.login.yahoo.co.jp/yconnect/v2",
                     "https://auth.login.yahoo.co.jp/yconnect/v2/authorization?client_id=a&redirect_uri=b&response_type=code&scope=openid&nonce=c&code_challenge=d&code_challenge_method=plain&state=e"
                 ),
                 // URLエンコードが必要な文字列を含む(スペース)
                 arrayOf(
-                    "a", "yj-example:/", ResponseType.CODE, setOf(Scope.OPENID, Scope.PROFILE), "c", "d", CodeChallengeMethod.PLAIN, "e", null,
+                    "a",
+                    "yj-example:/",
+                    ResponseType.CODE,
+                    setOf(Scope.OPENID, Scope.PROFILE),
+                    "c",
+                    "d",
+                    CodeChallengeMethod.PLAIN,
+                    "e",
+                    null,
+                    "https://auth.login.yahoo.co.jp/yconnect/v2",
                     "https://auth.login.yahoo.co.jp/yconnect/v2/authorization?client_id=a&redirect_uri=yj-example%3A%2F&response_type=code&scope=openid%20profile&nonce=c&code_challenge=d&code_challenge_method=plain&state=e"
                 ),
                 // フルパラメータ
                 arrayOf(
-                    "a", "b", ResponseType.CODE, setOf(Scope.OPENID), "c", "d", CodeChallengeMethod.PLAIN, "e",
+                    "a",
+                    "b",
+                    ResponseType.CODE,
+                    setOf(Scope.OPENID),
+                    "c",
+                    "d",
+                    CodeChallengeMethod.PLAIN,
+                    "e",
                     OptionalParameters(
                         bail = true,
                         display = Display.INAPP,
                         maxAge = 60,
                         prompts = setOf(Prompt.LOGIN)
                     ),
+                    "https://auth.login.yahoo.co.jp/yconnect/v2",
                     "https://auth.login.yahoo.co.jp/yconnect/v2/authorization?client_id=a&redirect_uri=b&response_type=code&scope=openid&nonce=c&code_challenge=d&code_challenge_method=plain&state=e&bail=1&display=inapp&max_age=60&prompt=login"
                 ),
                 // additionalParameters
                 arrayOf(
-                    "a", "b", ResponseType.CODE, setOf(Scope.OPENID), "c", "d", CodeChallengeMethod.PLAIN, "e",
+                    "a",
+                    "b",
+                    ResponseType.CODE,
+                    setOf(Scope.OPENID),
+                    "c",
+                    "d",
+                    CodeChallengeMethod.PLAIN,
+                    "e",
                     OptionalParameters(
                         bail = true,
                         display = Display.INAPP,
@@ -81,15 +115,38 @@ class AuthorizationRequestTest(
                         prompts = setOf(Prompt.LOGIN),
                         additionalParameters = mapOf("key" to "value")
                     ),
+                    "https://auth.login.yahoo.co.jp/yconnect/v2",
                     "https://auth.login.yahoo.co.jp/yconnect/v2/authorization?client_id=a&redirect_uri=b&response_type=code&scope=openid&nonce=c&code_challenge=d&code_challenge_method=plain&state=e&bail=1&display=inapp&max_age=60&prompt=login&key=value"
                 ),
                 // additionalParametersによる既存のパラメータの上書き
                 arrayOf(
-                    "a", "b", ResponseType.CODE, setOf(Scope.OPENID), "c", "d", CodeChallengeMethod.PLAIN, "e",
+                    "a",
+                    "b",
+                    ResponseType.CODE,
+                    setOf(Scope.OPENID),
+                    "c",
+                    "d",
+                    CodeChallengeMethod.PLAIN,
+                    "e",
                     OptionalParameters(
                         additionalParameters = mapOf("scope" to "openid additional_scope")
                     ),
+                    "https://auth.login.yahoo.co.jp/yconnect/v2",
                     "https://auth.login.yahoo.co.jp/yconnect/v2/authorization?client_id=a&redirect_uri=b&response_type=code&scope=openid%20additional_scope&nonce=c&code_challenge=d&code_challenge_method=plain&state=e"
+                ),
+                // issuerの変更
+                arrayOf(
+                    "a",
+                    "b",
+                    ResponseType.CODE,
+                    setOf(Scope.OPENID),
+                    "c",
+                    "d",
+                    CodeChallengeMethod.PLAIN,
+                    "e",
+                    null,
+                    "https://hoge.yahoo.co.jp/yconnect/v2",
+                    "https://hoge.yahoo.co.jp/yconnect/v2/authorization?client_id=a&redirect_uri=b&response_type=code&scope=openid&nonce=c&code_challenge=d&code_challenge_method=plain&state=e"
                 )
             )
         }
@@ -107,7 +164,8 @@ class AuthorizationRequestTest(
                 codeChallenge,
                 codeChallengeMethod,
                 state,
-                optionalParameters
+                optionalParameters,
+                issuer
             )
     }
 
