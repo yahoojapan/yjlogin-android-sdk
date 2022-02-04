@@ -26,6 +26,7 @@ import jp.co.yahoo.yconnect.yjloginsdk.util.Logger
 internal class LoginProcess(
     private val context: Context,
     private val url: Uri,
+    private val forceOpenCustomTabs: Boolean,
     override val onFinish: ((SealedLoginResult) -> Unit)?
 ) : ILoginProcess {
     private val logger = Logger.LoggerProvider.provide()
@@ -38,7 +39,12 @@ internal class LoginProcess(
 
         val intent = packageName?.let {
             isBrowserTab = true
-            LoginProcessActivity.createIntent(context, url.toString(), packageName).apply {
+            LoginProcessActivity.createIntent(
+                context = context,
+                url = url.toString(),
+                packageName = packageName,
+                forceOpenCustomTabs = forceOpenCustomTabs
+            ).apply {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }
         } ?: run {

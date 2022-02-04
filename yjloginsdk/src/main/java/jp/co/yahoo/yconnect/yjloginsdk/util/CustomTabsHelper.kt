@@ -62,9 +62,11 @@ internal object CustomTabsHelper {
         ),
     }
 
-    fun launch(context: Context, packageName: String, requestUrl: Uri) {
+    fun launch(context: Context, packageName: String, requestUrl: Uri, forceOpenCustomTabs: Boolean) {
         val customTabsIntent = CustomTabsIntent.Builder().build()
-        customTabsIntent.intent.setPackage(packageName)
+        if (forceOpenCustomTabs) {
+            customTabsIntent.intent.setPackage(packageName)
+        }
         customTabsIntent.launchUrl(context, requestUrl)
     }
 
