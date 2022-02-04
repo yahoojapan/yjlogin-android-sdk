@@ -20,48 +20,50 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import kotlinx.android.synthetic.main.activity_main.*
+import jp.co.yahoo.yconnect.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewmodel: MainViewModel
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         viewmodel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         viewmodel.result.observe(this, Observer {
-            result.text = it
+            binding.result.text = it
         })
 
-        loginButton.setOnClickListener {
+        binding.loginButton.setOnClickListener {
             viewmodel.onClickLoginButton(this)
         }
 
-        loginButtonWhite.also {
+        binding.loginButtonWhite.also {
             it.scopes = viewmodel.scopes
             it.nonce = viewmodel.nonce
             it.codeChallenge = viewmodel.codeChallenge
             it.listener = viewmodel
         }
 
-        loginButtonRed.also {
+        binding.loginButtonRed.also {
             it.scopes = viewmodel.scopes
             it.nonce = viewmodel.nonce
             it.codeChallenge = viewmodel.codeChallenge
             it.listener = viewmodel
         }
 
-        loginIconWhite.also {
+        binding.loginIconWhite.also {
             it.scopes = viewmodel.scopes
             it.nonce = viewmodel.nonce
             it.codeChallenge = viewmodel.codeChallenge
             it.listener = viewmodel
         }
 
-        loginIconRed.also {
+        binding.loginIconRed.also {
             it.scopes = viewmodel.scopes
             it.nonce = viewmodel.nonce
             it.codeChallenge = viewmodel.codeChallenge
