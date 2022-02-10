@@ -113,7 +113,7 @@ object LoginManager {
             issuer
         ).generate()
 
-        process = LoginProcess(context, url, onFinish = {
+        process = LoginProcess(context, url, configuration.forceOpenCustomTabs, onFinish = {
             when (it) {
                 is SealedLoginResult.Success -> {
                     logger.d("login success! ${it.loginResult}")
@@ -162,5 +162,14 @@ object LoginManager {
         }
 
         configuration?.issuer = issuer
+    }
+
+    /**
+     * ログイン時のCustom Tabsの利用を設定する。
+     *
+     * @param forceOpenCustomTabs trueならログイン時に強制的にCustom Tabsを利用する
+     */
+    fun setForceOpenCustomTabs(forceOpenCustomTabs: Boolean) {
+        configuration?.forceOpenCustomTabs = forceOpenCustomTabs
     }
 }

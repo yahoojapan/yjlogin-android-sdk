@@ -31,29 +31,29 @@ internal class LoginProcessActivity : AppCompatActivity() {
     private var isCustomTabsOpened = false
     private var url: String? = null
     private var customTabsPackageName: String? = null
-    private var useCustomTabs = false
+    private var forceOpenCustomTabs = false
     private var onFinished: (() -> Unit)? = null
 
     companion object {
         private const val EXTRA_URL = "EXTRA_URL"
         private const val EXTRA_CUSTOM_TABS_PACKAGE_NAME = "EXTRA_PACKAGE_NAME"
-        private const val EXTRA_USE_CUSTOM_TABS = "EXTRA_USE_CUSTOM_TABS"
+        private const val EXTRA_FORCE_OPEN_CUSTOM_TABS = "EXTRA_FORCE_OPEN_CUSTOM_TABS"
 
         private const val KEY_IS_CUSTOM_TABS_OPENED = "KEY_IS_CUSTOM_TABS_OPENED"
         private const val KEY_URL = "KEY_URL"
         private const val KEY_CUSTOM_TABS_PACKAGE_NAME = "KEY_CUSTOM_TABS_PACKAGE_NAME"
-        private const val KEY_USE_CUSTOM_TABS = "KEY_USE_CUSTOM_TABS"
+        private const val KEY_FORCE_OPEN_CUSTOM_TABS = "KEY_FORCE_OPEN_CUSTOM_TABS"
 
         fun createIntent(
             context: Context,
             url: String,
             packageName: String,
-            useCustomTabs: Boolean = true
+            forceOpenCustomTabs: Boolean
         ): Intent {
             return Intent(context, LoginProcessActivity::class.java).apply {
                 putExtra(EXTRA_URL, url)
                 putExtra(EXTRA_CUSTOM_TABS_PACKAGE_NAME, packageName)
-                putExtra(EXTRA_USE_CUSTOM_TABS, useCustomTabs)
+                putExtra(EXTRA_FORCE_OPEN_CUSTOM_TABS, forceOpenCustomTabs)
             }
         }
     }
@@ -65,16 +65,16 @@ internal class LoginProcessActivity : AppCompatActivity() {
             isCustomTabsOpened = it.getBoolean(KEY_IS_CUSTOM_TABS_OPENED)
             url = it.getString(KEY_URL)
             customTabsPackageName = it.getString(KEY_CUSTOM_TABS_PACKAGE_NAME)
-            useCustomTabs = it.getBoolean(KEY_USE_CUSTOM_TABS)
+            forceOpenCustomTabs = it.getBoolean(KEY_FORCE_OPEN_CUSTOM_TABS)
         }
     }
 
     override fun onResume() {
         super.onResume()
 
-        val useCustomTabs = intent.getBooleanExtra(EXTRA_USE_CUSTOM_TABS, false)
+        val forceOpenCustomTabs = intent.getBooleanExtra(EXTRA_FORCE_OPEN_CUSTOM_TABS, false)
 
-        if (useCustomTabs && !isCustomTabsOpened) {
+        if (!isCustomTabsOpened) {
             val url = intent.getStringExtra(EXTRA_URL)?.toUri()
                 ?: run {
                     logger.e("EXTRA_URL not found")
@@ -94,9 +94,9 @@ internal class LoginProcessActivity : AppCompatActivity() {
             this.isCustomTabsOpened = true
             this.url = url.toString()
             this.customTabsPackageName = customTabsPackageName
-            this.useCustomTabs = useCustomTabs
+            this.forceOpenCustomTabs = forceOpenCustomTabs
 
-            CustomTabsHelper.launch(this, customTabsPackageName, url)
+            CustomTabsHelper.launch(this, customTabsPackageName, url, forceOpenCustomTabs)
             return
         }
 
@@ -126,7 +126,7 @@ internal class LoginProcessActivity : AppCompatActivity() {
             putBoolean(KEY_IS_CUSTOM_TABS_OPENED, isCustomTabsOpened)
             putString(KEY_URL, url)
             putString(KEY_CUSTOM_TABS_PACKAGE_NAME, customTabsPackageName)
-            putBoolean(KEY_USE_CUSTOM_TABS, useCustomTabs)
+            putBoolean(KEY_FORCE_OPEN_CUSTOM_TABS, forceOpenCustomTabs)
         }
     }
 
