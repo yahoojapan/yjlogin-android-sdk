@@ -5,11 +5,10 @@ apply plugin: 'org.jetbrains.dokka'
 group = 'com.github.USERNAME.REPO'
 
 android {
-    compileSdkVersion 31
-
+    compileSdkVersion 33
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 31
+        minSdkVersion 23
+        targetSdkVersion 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
