@@ -12,8 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+
       - name: Generate document
-        run: ./gradlew dokka
+        run: ./gradlew dokkaHtml
 
       - name: Commit files
         env:
