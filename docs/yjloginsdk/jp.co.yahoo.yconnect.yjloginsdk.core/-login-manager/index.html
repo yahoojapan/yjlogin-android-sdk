@@ -1,60 +1,179 @@
-<HTML>
-<HEAD>
-<meta charset="UTF-8">
-<title>LoginManager - yjloginsdk</title>
-<link rel="stylesheet" href="../../../style.css">
-</HEAD>
-<BODY>
-<a href="../../index.html">yjloginsdk</a>&nbsp;/&nbsp;<a href="../index.html">jp.co.yahoo.yconnect.yjloginsdk.core</a>&nbsp;/&nbsp;<a href="./index.html">LoginManager</a><br/>
-<br/>
-<h1>LoginManager</h1>
-<code><span class="keyword">object </span><span class="identifier">LoginManager</span></code>
-<p>ログインマネージャー。
-Yahoo! ID連携のクライアントに関する設定をし、認可リクエストを実行した結果を返す。</p>
-<h3>Functions</h3>
-<table>
-<tbody>
-<tr>
-<td>
-<h4><a href="login.html">login</a></h4>
-</td>
-<td>
-<p>Yahoo! ID連携でログインを行う。</p>
-<code><span class="keyword">fun </span><span class="identifier">login</span><span class="symbol">(</span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.core.LoginManager$login(android.content.Context, kotlin.collections.Set((jp.co.yahoo.yconnect.yjloginsdk.core.Scope)), kotlin.String, kotlin.String, jp.co.yahoo.yconnect.yjloginsdk.core.CodeChallengeMethod, jp.co.yahoo.yconnect.yjloginsdk.core.OptionalParameters)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.core.LoginManager$login(android.content.Context, kotlin.collections.Set((jp.co.yahoo.yconnect.yjloginsdk.core.Scope)), kotlin.String, kotlin.String, jp.co.yahoo.yconnect.yjloginsdk.core.CodeChallengeMethod, jp.co.yahoo.yconnect.yjloginsdk.core.OptionalParameters)/scopes">scopes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html"><span class="identifier">Set</span></a><span class="symbol">&lt;</span><a href="../-scope/index.html"><span class="identifier">Scope</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.core.LoginManager$login(android.content.Context, kotlin.collections.Set((jp.co.yahoo.yconnect.yjloginsdk.core.Scope)), kotlin.String, kotlin.String, jp.co.yahoo.yconnect.yjloginsdk.core.CodeChallengeMethod, jp.co.yahoo.yconnect.yjloginsdk.core.OptionalParameters)/nonce">nonce</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.core.LoginManager$login(android.content.Context, kotlin.collections.Set((jp.co.yahoo.yconnect.yjloginsdk.core.Scope)), kotlin.String, kotlin.String, jp.co.yahoo.yconnect.yjloginsdk.core.CodeChallengeMethod, jp.co.yahoo.yconnect.yjloginsdk.core.OptionalParameters)/codeChallenge">codeChallenge</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.core.LoginManager$login(android.content.Context, kotlin.collections.Set((jp.co.yahoo.yconnect.yjloginsdk.core.Scope)), kotlin.String, kotlin.String, jp.co.yahoo.yconnect.yjloginsdk.core.CodeChallengeMethod, jp.co.yahoo.yconnect.yjloginsdk.core.OptionalParameters)/codeChallengeMethod">codeChallengeMethod</span><span class="symbol">:</span>&nbsp;<a href="../-code-challenge-method/index.html"><span class="identifier">CodeChallengeMethod</span></a>&nbsp;<span class="symbol">=</span>&nbsp;CodeChallengeMethod.S256<span class="symbol">, </span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.core.LoginManager$login(android.content.Context, kotlin.collections.Set((jp.co.yahoo.yconnect.yjloginsdk.core.Scope)), kotlin.String, kotlin.String, jp.co.yahoo.yconnect.yjloginsdk.core.CodeChallengeMethod, jp.co.yahoo.yconnect.yjloginsdk.core.OptionalParameters)/optionalParameters">optionalParameters</span><span class="symbol">:</span>&nbsp;<a href="../-optional-parameters/index.html"><span class="identifier">OptionalParameters</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
-</tr>
-<tr>
-<td>
-<h4><a href="remove-login-listener.html">removeLoginListener</a></h4>
-</td>
-<td>
-<p>ログイン処理の通知のためのリスナーを破棄する。</p>
-<code><span class="keyword">fun </span><span class="identifier">removeLoginListener</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
-</tr>
-<tr>
-<td>
-<h4><a href="set-issuer.html">setIssuer</a></h4>
-</td>
-<td>
-<p>Issuerを設定する。</p>
-<code><span class="keyword">fun </span><span class="identifier">setIssuer</span><span class="symbol">(</span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.core.LoginManager$setIssuer(android.net.Uri)/issuer">issuer</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/net/Uri.html"><span class="identifier">Uri</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
-</tr>
-<tr>
-<td>
-<h4><a href="set-login-listener.html">setLoginListener</a></h4>
-</td>
-<td>
-<p>ログイン処理の通知のためのリスナーを保持する。</p>
-<code><span class="keyword">fun </span><span class="identifier">setLoginListener</span><span class="symbol">(</span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.core.LoginManager$setLoginListener(jp.co.yahoo.yconnect.yjloginsdk.core.LoginListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-login-listener/index.html"><span class="identifier">LoginListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
-</tr>
-<tr>
-<td>
-<h4><a href="setup.html">setup</a></h4>
-</td>
-<td>
-<p>ログインマネージャーの設定を行う。</p>
-<code><span class="keyword">fun </span><span class="identifier">setup</span><span class="symbol">(</span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.core.LoginManager$setup(kotlin.String, android.net.Uri)/clientId">clientId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="jp.co.yahoo.yconnect.yjloginsdk.core.LoginManager$setup(kotlin.String, android.net.Uri)/redirectUri">redirectUri</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/net/Uri.html"><span class="identifier">Uri</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
-</tr>
-</tbody>
-</table>
-</BODY>
-</HTML>
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>LoginManager</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            yjloginsdk
+                    </a>
+            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":yjloginsdk:dokkaHtml/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="yjloginsdk::jp.co.yahoo.yconnect.yjloginsdk.core/LoginManager///PointingToDeclaration//1566819124">
+  <div class="breadcrumbs"><a href="../../../index.html">yjloginsdk</a><span class="delimiter">/</span><a href="../index.html">jp.co.yahoo.yconnect.yjloginsdk.core</a><span class="delimiter">/</span><span class="current">LoginManager</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Login</span><wbr></wbr><span><span>Manager</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":yjloginsdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">LoginManager</a></div><p class="paragraph">ログインマネージャー。 Yahoo! ID連携のクライアントに関する設定をし、認可リクエストを実行した結果を返す。</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1033445496%2FFunctions%2F1566819124" anchor-label="login" id="-1033445496%2FFunctions%2F1566819124" data-filterable-set=":yjloginsdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":yjloginsdk:dokkaHtml/release" data-filterable-set=":yjloginsdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="login.html"><span><span>login</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1033445496%2FFunctions%2F1566819124"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":yjloginsdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="login.html"><span class="token function">login</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a><span class="token punctuation">, </span></span><span class="parameter ">scopes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-scope/index.html">Scope</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">nonce<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">codeChallenge<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">codeChallengeMethod<span class="token operator">: </span><a href="../-code-challenge-method/index.html">CodeChallengeMethod</a><span class="token operator"> = </span>CodeChallengeMethod.S256<span class="token punctuation">, </span></span><span class="parameter ">optionalParameters<span class="token operator">: </span><a href="../-optional-parameters/index.html">OptionalParameters</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Yahoo! ID連携でログインを行う。</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1291859766%2FFunctions%2F1566819124" anchor-label="removeLoginListener" id="1291859766%2FFunctions%2F1566819124" data-filterable-set=":yjloginsdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":yjloginsdk:dokkaHtml/release" data-filterable-set=":yjloginsdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="remove-login-listener.html"><span>remove</span><wbr></wbr><span>Login</span><wbr></wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1291859766%2FFunctions%2F1566819124"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":yjloginsdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="remove-login-listener.html"><span class="token function">removeLoginListener</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">ログイン処理の通知のためのリスナーを破棄する。</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1616076466%2FFunctions%2F1566819124" anchor-label="setForceOpenCustomTabs" id="-1616076466%2FFunctions%2F1566819124" data-filterable-set=":yjloginsdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":yjloginsdk:dokkaHtml/release" data-filterable-set=":yjloginsdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-force-open-custom-tabs.html"><span>set</span><wbr></wbr><span>Force</span><wbr></wbr><span>Open</span><wbr></wbr><span>Custom</span><wbr></wbr><span><span>Tabs</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1616076466%2FFunctions%2F1566819124"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":yjloginsdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-force-open-custom-tabs.html"><span class="token function">setForceOpenCustomTabs</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">forceOpenCustomTabs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">ログイン時のCustom Tabsの利用を設定する。</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-285951502%2FFunctions%2F1566819124" anchor-label="setIssuer" id="-285951502%2FFunctions%2F1566819124" data-filterable-set=":yjloginsdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":yjloginsdk:dokkaHtml/release" data-filterable-set=":yjloginsdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-issuer.html"><span>set</span><wbr></wbr><span><span>Issuer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-285951502%2FFunctions%2F1566819124"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":yjloginsdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-issuer.html"><span class="token function">setIssuer</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">issuer<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/net/Uri.html">Uri</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Issuerを設定する。</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1970123563%2FFunctions%2F1566819124" anchor-label="setLoginListener" id="1970123563%2FFunctions%2F1566819124" data-filterable-set=":yjloginsdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":yjloginsdk:dokkaHtml/release" data-filterable-set=":yjloginsdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-login-listener.html"><span>set</span><wbr></wbr><span>Login</span><wbr></wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1970123563%2FFunctions%2F1566819124"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":yjloginsdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-login-listener.html"><span class="token function">setLoginListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="../-login-listener/index.html">LoginListener</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">ログイン処理の通知のためのリスナーを保持する。</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="190923737%2FFunctions%2F1566819124" anchor-label="setup" id="190923737%2FFunctions%2F1566819124" data-filterable-set=":yjloginsdk:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":yjloginsdk:dokkaHtml/release" data-filterable-set=":yjloginsdk:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="setup.html"><span><span>setup</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="190923737%2FFunctions%2F1566819124"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":yjloginsdk:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="setup.html"><span class="token function">setup</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">clientId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">redirectUri<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/net/Uri.html">Uri</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">ログインマネージャーの設定を行う。</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
