@@ -54,12 +54,17 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
 
-dokka {
-    configuration {
-        includeNonPublic = false
-        skipEmptyPackages = true
-    }
 
-    outputFormat = 'html'
-    outputDirectory = "$rootDir/docs"
+import org.jetbrains.dokka.gradle.DokkaTask
+import org.jetbrains.dokka.DokkaConfiguration.Visibility
+
+tasks.withType(DokkaTask.class) {
+    outputDirectory.set(file("$rootDir/docs"))
+
+    dokkaSourceSets {
+        configureEach {
+            documentedVisibilities.set([Visibility.PUBLIC])
+            skipEmptyPackages.set(true)
+        }
+    }
 }
