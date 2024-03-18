@@ -1,3 +1,7 @@
+/*
+ * © 2024 LY Corporation. All Rights Reserved.
+ */
+
 package jp.co.yahoo.yconnect.yjloginsdk.core
 
 internal object Constant {

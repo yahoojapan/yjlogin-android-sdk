@@ -60,17 +60,20 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
 
-
-import org.jetbrains.dokka.gradle.DokkaTask
-import org.jetbrains.dokka.DokkaConfiguration.Visibility
-
-tasks.withType(DokkaTask.class) {
-    outputDirectory.set(file("$rootDir/docs"))
-
+dokkaHtml.configure {
+    outputDirectory.set(new File("${rootDir}/docs"))
     dokkaSourceSets {
         configureEach {
-            documentedVisibilities.set([Visibility.PUBLIC])
+            includeNonPublic.set(false)
             skipEmptyPackages.set(true)
         }
     }
+    pluginsMapConfiguration.set(
+            [
+                    "org.jetbrains.dokka.base.DokkaBase": """{
+                    "footerMessage": "© 2024 LY Corporation. All Rights Reserved."
+                    }"""
+            ]
+    )
+
 }
