@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest package="jp.co.yahoo.yconnect.yjloginsdk"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ © 2024 LY Corporation. All Rights Reserved.
+  -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <queries>
         <package android:name="com.android.chrome" />

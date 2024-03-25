@@ -67,7 +67,8 @@ obj/
 .idea/tasks.xml
 .idea/.name
 .idea/compiler.xml
-.idea/copyright/profiles_settings.xml
+!.idea/copyright/profiles_settings.xml
+!.idea/copyright/CommonCopyright.xml.xml
 .idea/encodings.xml
 .idea/misc.xml
 .idea/modules.xml
@@ -127,4 +128,3 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-

@@ -1,6 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = '1.6.10'
+    ext.kotlin_version = '1.9.10'
     ext.dokka_version = '1.9.10'
     ext.ktlint_version = '0.36.0'
     ext.maven_gradle_plugin_version = '2.1'
@@ -11,7 +11,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.1'
+        classpath 'com.android.tools.build:gradle:8.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:$dokka_version"
         classpath "com.github.dcendents:android-maven-gradle-plugin:$maven_gradle_plugin_version"
@@ -22,12 +22,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-    }
-}
-
-subprojects {
-    tasks.withType(Test) {
-        maxHeapSize = "3072m"
     }
 }
 
