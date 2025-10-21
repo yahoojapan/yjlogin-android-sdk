@@ -123,7 +123,7 @@ internal object CustomTabsHelper {
     private fun getSignatures(pm: PackageManager, packageName: String): Set<Signature> {
         return pm.getPackageInfo(packageName, PackageManager.GET_SIGNATURES)
             .signatures
-            .toSet()
+            ?.toSet() ?: emptySet()
     }
 
     private fun generateHash(signature: Signature): String? {

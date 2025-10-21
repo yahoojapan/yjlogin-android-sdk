@@ -11,7 +11,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.2'
+        classpath 'com.android.tools.build:gradle:8.10.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:$dokka_version"
         classpath "com.github.dcendents:android-maven-gradle-plugin:$maven_gradle_plugin_version"
@@ -22,6 +22,16 @@ allprojects {
     repositories {
         google()
         jcenter()
+    }
+    // 脆弱性対応
+    configurations.configureEach {
+        resolutionStrategy {
+            force "org.bouncycastle:bcprov-jdk18on:1.78"
+            force "com.fasterxml.jackson.core:jackson-core:2.15.0-rc1"
+            force "com.google.protobuf:protobuf-java-util:3.25.5"
+            force "com.google.protobuf:protobuf-java:3.25.5"
+            force "io.netty:netty-codec-http2:4.1.125.Final"
+        }
     }
 }
 
